@@ -1,18 +1,17 @@
 //
-//  ViewController.swift
+//  MainTableViewController.swift
 //  Netease
 //
-//  Created by user on 2017/8/3.
+//  Created by B2B-IOS on 2017/8/7.
 //  Copyright © 2017年 mobin. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +21,3 @@ class ViewController: UIViewController {
 
 
 }
-

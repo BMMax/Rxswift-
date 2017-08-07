@@ -14,11 +14,14 @@ class AppCoordinator: BaseCoordinator<Void> {
     private let window: UIWindow
 
     init(window: UIWindow) {
+        
         self.window = window
     }
 
     override func start() -> Observable<Void> {
-        let repositoryListCoordinator = RepositoryListCoordinator(window: window)
-        return coordinate(to: repositoryListCoordinator)
+        let mainVC = MainTabBarViewController()
+        let main = MainTabbarControllerCoordinator(presenter: mainVC)
+        window.rootViewController = mainVC
+        return coordinate(to: main)
     }
 }
