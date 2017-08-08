@@ -27,7 +27,7 @@ final class MainTabbarControllerCoordinator: BaseCoordinator<Void> {
     }
     
    
-    override func start() -> Observable<CoordinationResult> {
+    override func start() -> Observable<Void> {
         
         for coordinators in childCoordinators {
             
@@ -41,6 +41,7 @@ final class MainTabbarControllerCoordinator: BaseCoordinator<Void> {
                 break
             }
         }
-        return Observable.never()
+        
+        return coordinate(to: homeCoordinator).concat(coordinate(to: newsCoordinator))
     }
 }
