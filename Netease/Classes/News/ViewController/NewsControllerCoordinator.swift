@@ -14,6 +14,10 @@ final class NewsControllerCoordinator: BaseCoordinator<Void> {
     let presenter: NavigationViewController
     init(presenter: NavigationViewController) {
         self.presenter = presenter
+        presenter.tabBarItem.image = #imageLiteral(resourceName: "tabbar_icon_importantNews_normal_15x20_")
+        presenter.tabBarItem.selectedImage = #imageLiteral(resourceName: "tabbar_icon_importantNews_highlight_15x20_")
+        presenter.tabBarItem.title = "要闻"
+
     }
     
     override func start() -> Observable<Void> {

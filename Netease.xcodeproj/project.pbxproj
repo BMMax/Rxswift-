@@ -21,6 +21,14 @@
 		814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */; };
 		814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */; };
 		814B1BF81F3843E800E1CE05 /* HomeControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */; };
+		818767341F3944310068AB1A /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767331F3944310068AB1A /* LiveViewController.swift */; };
+		818767361F3944450068AB1A /* LiveControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767351F3944450068AB1A /* LiveControllerCoordinator.swift */; };
+		818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767371F3944600068AB1A /* VideoControllerCoordinator.swift */; };
+		8187673E1F3944AE0068AB1A /* MineControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187673D1F3944AE0068AB1A /* MineControllerCoordinator.swift */; };
+		818767401F3944BB0068AB1A /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187673F1F3944BB0068AB1A /* MineViewController.swift */; };
+		818767421F3946420068AB1A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767411F3946420068AB1A /* VideoViewController.swift */; };
+		818767471F3957B10068AB1A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767461F3957B10068AB1A /* Common.swift */; };
+		8187674C1F395A230068AB1A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187674B1F395A230068AB1A /* UIColor+Extension.swift */; };
 		CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACBD1F333E6A00EA7BEF /* AppCoordinator.swift */; };
 		CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */; };
 		CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */; };
@@ -32,16 +40,24 @@
 		8132212A1F384B8700C21486 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		8132212D1F384D1D00C21486 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8132212F1F384D9E00C21486 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		813221311F38514500C21486 /* NewsControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsControllerCoordinator.swift; sourceTree = "<group>"; };
+		813221311F38514500C21486 /* NewsControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsControllerCoordinator.swift; path = ../News/ViewController/NewsControllerCoordinator.swift; sourceTree = "<group>"; };
 		813221331F38518300C21486 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		814B1BD11F383B7700E1CE05 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		814B1BD41F383B8000E1CE05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		814B1BD61F383B8000E1CE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		814B1BD81F383B8000E1CE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814B1BD91F383B8000E1CE05 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
+		814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarControllerCoordinator.swift; path = ../Main/MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
 		814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerCoordinator.swift; sourceTree = "<group>"; };
+		814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCoordinator.swift; path = ../Home/ViewController/HomeControllerCoordinator.swift; sourceTree = "<group>"; };
+		818767331F3944310068AB1A /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		818767351F3944450068AB1A /* LiveControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveControllerCoordinator.swift; path = ../Live/ViewController/LiveControllerCoordinator.swift; sourceTree = "<group>"; };
+		818767371F3944600068AB1A /* VideoControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoControllerCoordinator.swift; path = ../Video/ViewController/VideoControllerCoordinator.swift; sourceTree = "<group>"; };
+		8187673D1F3944AE0068AB1A /* MineControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MineControllerCoordinator.swift; path = ../Mine/ViewController/MineControllerCoordinator.swift; sourceTree = "<group>"; };
+		8187673F1F3944BB0068AB1A /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		818767411F3946420068AB1A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		818767461F3957B10068AB1A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		8187674B1F395A230068AB1A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CE37ACA71F333E4A00EA7BEF /* Netease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE37ACBD1F333E6A00EA7BEF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -72,6 +88,12 @@
 		8132212C1F384C1400C21486 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */,
+				814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */,
+				813221311F38514500C21486 /* NewsControllerCoordinator.swift */,
+				818767351F3944450068AB1A /* LiveControllerCoordinator.swift */,
+				818767371F3944600068AB1A /* VideoControllerCoordinator.swift */,
+				8187673D1F3944AE0068AB1A /* MineControllerCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -115,7 +137,6 @@
 		814B1BCD1F383B0D00E1CE05 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */,
 				8132212A1F384B8700C21486 /* MainTabBarViewController.swift */,
 				8132212D1F384D1D00C21486 /* NavigationViewController.swift */,
 			);
@@ -183,7 +204,6 @@
 		814B1BE31F3842AA00E1CE05 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */,
 				8132212F1F384D9E00C21486 /* HomeViewController.swift */,
 			);
 			path = ViewController;
@@ -214,6 +234,7 @@
 		814B1BE71F3842B200E1CE05 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				818767331F3944310068AB1A /* LiveViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,6 +263,7 @@
 		814B1BEB1F3842BC00E1CE05 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8187673F1F3944BB0068AB1A /* MineViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -270,7 +292,6 @@
 		814B1BEF1F3842C300E1CE05 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				813221311F38514500C21486 /* NewsControllerCoordinator.swift */,
 				813221331F38518300C21486 /* NewsViewController.swift */,
 			);
 			path = ViewController;
@@ -300,6 +321,7 @@
 		814B1BF31F3842C900E1CE05 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				818767411F3946420068AB1A /* VideoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -309,6 +331,46 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		818767441F3956BC0068AB1A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				818767481F3959EE0068AB1A /* Extension */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		818767451F3957A10068AB1A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				818767461F3957B10068AB1A /* Common.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		818767481F3959EE0068AB1A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				818767491F3959EE0068AB1A /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		818767491F3959EE0068AB1A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8187674A1F3959EE0068AB1A /* UIColor */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8187674A1F3959EE0068AB1A /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				8187674B1F395A230068AB1A /* UIColor+Extension.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		C2C51BD6629146F24AB40735 /* Pods */ = {
@@ -343,6 +405,8 @@
 			children = (
 				CE37ACBC1F333E6A00EA7BEF /* App */,
 				814B1BCA1F383B0D00E1CE05 /* Classes */,
+				818767451F3957A10068AB1A /* Utility */,
+				818767441F3956BC0068AB1A /* Tool */,
 				CEDE05871F346F8C003DA741 /* Networking */,
 				CE37ACC11F333E8000EA7BEF /* Library */,
 				814B1BD31F383B8000E1CE05 /* Resource */,
@@ -501,17 +565,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */,
+				8187673E1F3944AE0068AB1A /* MineControllerCoordinator.swift in Sources */,
+				818767421F3946420068AB1A /* VideoViewController.swift in Sources */,
 				814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */,
 				813221321F38514500C21486 /* NewsControllerCoordinator.swift in Sources */,
 				813221341F38518300C21486 /* NewsViewController.swift in Sources */,
 				814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */,
 				8132212E1F384D1D00C21486 /* NavigationViewController.swift in Sources */,
+				818767361F3944450068AB1A /* LiveControllerCoordinator.swift in Sources */,
 				814B1BF81F3843E800E1CE05 /* HomeControllerCoordinator.swift in Sources */,
+				818767341F3944310068AB1A /* LiveViewController.swift in Sources */,
 				813221301F384D9E00C21486 /* HomeViewController.swift in Sources */,
+				818767401F3944BB0068AB1A /* MineViewController.swift in Sources */,
+				818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */,
 				8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */,
+				818767471F3957B10068AB1A /* Common.swift in Sources */,
 				CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */,
 				814B1BD21F383B7700E1CE05 /* AppDelegate.swift in Sources */,
 				CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */,
+				8187674C1F395A230068AB1A /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

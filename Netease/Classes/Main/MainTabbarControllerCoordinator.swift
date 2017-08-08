@@ -17,16 +17,26 @@ final class MainTabbarControllerCoordinator: BaseCoordinator<Void> {
     private let childCoordinators: [Any]
     private let homeCoordinator = HomeControllerCoordinator(presenter: NavigationViewController())
     private let newsCoordinator = NewsControllerCoordinator(presenter: NavigationViewController())
+    private let liveCoordinator = LiveControllerCoordinator(presenter: NavigationViewController())
+    private let videoCoordinator = VideoControllerCoordinator(presenter: NavigationViewController())
+    private let mineCoordinator = MineControllerCoordinator(presenter: NavigationViewController())
     
 //=======================================================
 // MARK: 构造方法
 //=======================================================
     init(presenter: MainTabBarViewController) {
         tabBarController = presenter
-        childCoordinators = [homeCoordinator,newsCoordinator]
+        childCoordinators = [homeCoordinator,
+                             newsCoordinator,
+                             liveCoordinator,
+                             videoCoordinator,
+                             mineCoordinator]
+        // 字体颜色
+        var attrs = [String: NSObject]()
+        attrs[NSForegroundColorAttributeName] = kMainRedColor
+        UITabBarItem.appearance().setTitleTextAttributes(attrs, for:.selected)
     }
     
-   
     override func start() -> Observable<Void> {
         
         for coordinators in childCoordinators {
@@ -34,14 +44,22 @@ final class MainTabbarControllerCoordinator: BaseCoordinator<Void> {
             switch coordinators {
             case let home as HomeControllerCoordinator:
                 tabBarController.addChildViewController(home.presenter)
-                
             case let news as NewsControllerCoordinator:
                 tabBarController.addChildViewController(news.presenter)
+            case let live as LiveControllerCoordinator:
+                tabBarController.addChildViewController(live.presenter)
+            case let video as VideoControllerCoordinator:
+                tabBarController.addChildViewController(video.presenter)
+            case let mine as MineControllerCoordinator:
+                tabBarController.addChildViewController(mine.presenter)
             default:
                 break
             }
         }
-        
-        return coordinate(to: homeCoordinator).concat(coordinate(to: newsCoordinator))
+        return coordinate(to: homeCoordinator)
+            .concat(coordinate(to: newsCoordinator))
+            .concat(coordinate(to: liveCoordinator))
+            .concat(coordinate(to: videoCoordinator))
+            .concat(coordinate(to: mineCoordinator))
     }
 }

@@ -14,6 +14,9 @@ final class HomeControllerCoordinator: BaseCoordinator<Void> {
     let presenter: NavigationViewController
     init(presenter: NavigationViewController) {
         self.presenter = presenter
+        presenter.tabBarItem.image = #imageLiteral(resourceName: "tabbar_news_21x16_")
+        presenter.tabBarItem.selectedImage = #imageLiteral(resourceName: "tabbar_news_highlighted_21x16_")
+        presenter.tabBarItem.title = "首页"
     }
 
     override func start() -> Observable<Void> {
