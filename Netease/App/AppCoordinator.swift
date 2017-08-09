@@ -23,5 +23,8 @@ class AppCoordinator: BaseCoordinator<Void> {
         let main = MainTabbarControllerCoordinator(presenter: mainVC)
         window.rootViewController = mainVC
         return coordinate(to: main)
+        
     }
+    
+    
 }

@@ -21,6 +21,10 @@
 		814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */; };
 		814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */; };
 		814B1BF81F3843E800E1CE05 /* HomeControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */; };
+		8176A2341F3AF3950020DF46 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A2331F3AF3950020DF46 /* UIView+Extension.swift */; };
+		8176A2371F3AF61E0020DF46 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A2361F3AF61E0020DF46 /* UILabel+Extension.swift */; };
+		8176A23A1F3AFF230020DF46 /* NewsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A2391F3AFF230020DF46 /* NewsMenuView.swift */; };
+		8176A23C1F3B02E10020DF46 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A23B1F3B02E10020DF46 /* AddView.swift */; };
 		818767341F3944310068AB1A /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767331F3944310068AB1A /* LiveViewController.swift */; };
 		818767361F3944450068AB1A /* LiveControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767351F3944450068AB1A /* LiveControllerCoordinator.swift */; };
 		818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767371F3944600068AB1A /* VideoControllerCoordinator.swift */; };
@@ -50,6 +54,10 @@
 		814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarControllerCoordinator.swift; path = ../Main/MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
 		814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCoordinator.swift; path = ../Home/ViewController/HomeControllerCoordinator.swift; sourceTree = "<group>"; };
+		8176A2331F3AF3950020DF46 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8176A2361F3AF61E0020DF46 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		8176A2391F3AFF230020DF46 /* NewsMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMenuView.swift; sourceTree = "<group>"; };
+		8176A23B1F3B02E10020DF46 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		818767331F3944310068AB1A /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		818767351F3944450068AB1A /* LiveControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveControllerCoordinator.swift; path = ../Live/ViewController/LiveControllerCoordinator.swift; sourceTree = "<group>"; };
 		818767371F3944600068AB1A /* VideoControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoControllerCoordinator.swift; path = ../Video/ViewController/VideoControllerCoordinator.swift; sourceTree = "<group>"; };
@@ -333,6 +341,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8176A2321F3AF3790020DF46 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8176A2331F3AF3950020DF46 /* UIView+Extension.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		8176A2351F3AF6110020DF46 /* UILable */ = {
+			isa = PBXGroup;
+			children = (
+				8176A2361F3AF61E0020DF46 /* UILabel+Extension.swift */,
+			);
+			path = UILable;
+			sourceTree = "<group>";
+		};
+		8176A2381F3AFF020020DF46 /* PageScroll */ = {
+			isa = PBXGroup;
+			children = (
+				8176A2391F3AFF230020DF46 /* NewsMenuView.swift */,
+				8176A23B1F3B02E10020DF46 /* AddView.swift */,
+			);
+			path = PageScroll;
+			sourceTree = "<group>";
+		};
 		818767441F3956BC0068AB1A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +393,8 @@
 		818767491F3959EE0068AB1A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8176A2351F3AF6110020DF46 /* UILable */,
+				8176A2321F3AF3790020DF46 /* UIView */,
 				8187674A1F3959EE0068AB1A /* UIColor */,
 			);
 			path = UIKit;
@@ -426,6 +461,7 @@
 		CE37ACC11F333E8000EA7BEF /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8176A2381F3AFF020020DF46 /* PageScroll */,
 				CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */,
 				CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */,
 			);
@@ -564,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8176A2371F3AF61E0020DF46 /* UILabel+Extension.swift in Sources */,
 				CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */,
 				8187673E1F3944AE0068AB1A /* MineControllerCoordinator.swift in Sources */,
 				818767421F3946420068AB1A /* VideoViewController.swift in Sources */,
@@ -579,10 +616,13 @@
 				818767401F3944BB0068AB1A /* MineViewController.swift in Sources */,
 				818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */,
 				8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */,
+				8176A2341F3AF3950020DF46 /* UIView+Extension.swift in Sources */,
 				818767471F3957B10068AB1A /* Common.swift in Sources */,
 				CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */,
 				814B1BD21F383B7700E1CE05 /* AppDelegate.swift in Sources */,
+				8176A23C1F3B02E10020DF46 /* AddView.swift in Sources */,
 				CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */,
+				8176A23A1F3AFF230020DF46 /* NewsMenuView.swift in Sources */,
 				8187674C1F395A230068AB1A /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
