@@ -9,9 +9,29 @@
 import UIKit
 
 extension UIView {
-
-    func makeLayout(_ layout: Layoutable) {
+    
+    @discardableResult
+    func makeLayout<T: UIView>(_ layout: Layoutable) -> T {
         snp.makeConstraints(layout.layoutMaker())
+        return self as! T
     }
+}
+extension UIView {
+    
+    @discardableResult
+    func added<T: UIView>(into superView: UIView) -> T {
+        
+        superView.addSubview(self)
+        return self as! T
+    }
+    
+    @discardableResult
+    func then<T: UIView>(config: (T) -> Void) -> T {
+        config(T())
+        return self as! T
+    }
+    
+    
+    
 
 }

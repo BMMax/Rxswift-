@@ -30,19 +30,19 @@ extension UILabel {
     }
 }
 
-extension UILabel {
-
-    @discardableResult
-    func added(into superView: UIView) -> UILabel {
-        
-        superView.addSubview(self)
-        return self
-    }
-    
-    @discardableResult
-    func then(config: (UILabel) -> Void) -> UILabel {
-        config(self)
-        return self
-    }
-    
-}
+//extension UILabel {
+//
+//    @discardableResult
+//    func added(into superView: UIView) -> UILabel {
+//        
+//        superView.addSubview(self)
+//        return self
+//    }
+//    
+//    @discardableResult
+//    func then(config: (UILabel) -> Void) -> UILabel {
+//        config(self)
+//        return self
+//    }
+//    
+//}

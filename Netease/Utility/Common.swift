@@ -13,7 +13,8 @@ import SnapKit
 // MARK: Property
 //=======================================================
 let kMainRedColor = UIColor(r: 206, g: 65, b: 58)
-
+let kScreenwidth = UIScreen.main.bounds.size.width
+let kScreenheight = UIScreen.main.bounds.size.height
 //=======================================================
 // MARK: Protocol
 //=======================================================
