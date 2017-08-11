@@ -21,6 +21,8 @@
 		814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */; };
 		814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */; };
 		814B1BF81F3843E800E1CE05 /* HomeControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */; };
+		8157C3F11F3D803E00029EE0 /* ChannelEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */; };
+		8157C3F41F3D894400029EE0 /* UIResponder+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157C3F31F3D894400029EE0 /* UIResponder+Router.swift */; };
 		815F52E61F3C229800CE88C3 /* NewsMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F52E51F3C229800CE88C3 /* NewsMenuLayout.swift */; };
 		8176A2341F3AF3950020DF46 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A2331F3AF3950020DF46 /* UIView+Extension.swift */; };
 		8176A2371F3AF61E0020DF46 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A2361F3AF61E0020DF46 /* UILabel+Extension.swift */; };
@@ -56,6 +58,8 @@
 		814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarControllerCoordinator.swift; path = ../Main/MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
 		814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCoordinator.swift; path = ../Home/ViewController/HomeControllerCoordinator.swift; sourceTree = "<group>"; };
+		8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelEditBar.swift; sourceTree = "<group>"; };
+		8157C3F31F3D894400029EE0 /* UIResponder+Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Router.swift"; sourceTree = "<group>"; };
 		815F52E51F3C229800CE88C3 /* NewsMenuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMenuLayout.swift; sourceTree = "<group>"; };
 		8176A2331F3AF3950020DF46 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8176A2361F3AF61E0020DF46 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -345,6 +349,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8157C3F21F3D88B500029EE0 /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				8157C3F31F3D894400029EE0 /* UIResponder+Router.swift */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
 		8176A2321F3AF3790020DF46 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,9 +376,10 @@
 		8176A2381F3AFF020020DF46 /* PageScroll */ = {
 			isa = PBXGroup;
 			children = (
-				8176A2391F3AFF230020DF46 /* NewsMenuView.swift */,
 				815F52E51F3C229800CE88C3 /* NewsMenuLayout.swift */,
+				8176A2391F3AFF230020DF46 /* NewsMenuView.swift */,
 				8176A23B1F3B02E10020DF46 /* AddView.swift */,
+				8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */,
 			);
 			path = PageScroll;
 			sourceTree = "<group>";
@@ -390,6 +403,7 @@
 		818767481F3959EE0068AB1A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8157C3F21F3D88B500029EE0 /* UIResponder */,
 				818767491F3959EE0068AB1A /* UIKit */,
 			);
 			path = Extension;
@@ -620,6 +634,7 @@
 				818767421F3946420068AB1A /* VideoViewController.swift in Sources */,
 				814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */,
 				813221321F38514500C21486 /* NewsControllerCoordinator.swift in Sources */,
+				8157C3F11F3D803E00029EE0 /* ChannelEditBar.swift in Sources */,
 				813221341F38518300C21486 /* NewsViewController.swift in Sources */,
 				814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */,
 				8132212E1F384D1D00C21486 /* NavigationViewController.swift in Sources */,
@@ -632,6 +647,7 @@
 				818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */,
 				8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */,
 				8176A2341F3AF3950020DF46 /* UIView+Extension.swift in Sources */,
+				8157C3F41F3D894400029EE0 /* UIResponder+Router.swift in Sources */,
 				818767471F3957B10068AB1A /* Common.swift in Sources */,
 				CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */,
 				814B1BD21F383B7700E1CE05 /* AppDelegate.swift in Sources */,

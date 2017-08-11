@@ -8,32 +8,87 @@
 
 import UIKit
 
+//=======================================================
+// MARK: 滚动条
+//=======================================================
+protocol NewsMenuViewDelegate: NSObjectProtocol {
+    func newsMenuView(_ menuView: NewsMenuView, selectedIndex: Int)
+    func didClickChannelEdit()
+}
 class NewsMenuView: UIView {
+    
+    /// 属性
+    weak var delegate: NewsMenuViewDelegate?
+    fileprivate var titleScrollView: TitleScrollView!
+    fileprivate var addItemView: AddView!
+    fileprivate var channelEditBar: ChannelEditBar?
+    var visibleItemList: [String]? {
+        didSet {
+            titleScrollView.visibleItemList = visibleItemList
+        }
+    }
+    
+    /// init 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        /// scrollView
+        titleScrollView = TitleScrollView()
+        titleScrollView.backgroundColor = UIColor.white
+        titleScrollView.added(into: self)
+                       .then{($0 as! TitleScrollView).titleDelegate = self}
+                       .makeLayout(TitleScrollViewLayout())
+        
+        /// +
+        addItemView = AddView()
+        addItemView.addAction(self){ [weak self] btn in
+                guard let `self` = self else {return}
+                if self.channelEditBar == nil {
+                    self.channelEditBar = ChannelEditBar()
+                    self.channelEditBar?.added(into: self).makeLayout(TitleScrollViewLayout())
+                }
+                self.channelEditBar?.isHidden = !(self.channelEditBar?.isHidden ?? false)
+                UIView.animate(withDuration: kAnimationTime, animations: { 
+                    guard let rotation = self.addItemView.imageView?.transform else {return}
+                    self.addItemView.imageView?.transform = rotation.rotated(by: CGFloat(Double.pi))
+                    /// 叫号点击
+                    self.delegate?.didClickChannelEdit()
+                })
+            }
+            .added(into: self)
+            .makeLayout(AddButtonLayout())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+extension NewsMenuView: TitleScrollViewDelegate {
 
+    fileprivate func titleScrollView(scrollView: TitleScrollView, selectedButtonIndex: Int) {
+    
+        delegate?.newsMenuView(self,selectedIndex: selectedButtonIndex)
+    }
 }
 
 //=======================================================
 // MARK: TitleScrollView -> 滚动菜单
 //=======================================================
-
 private protocol TitleScrollViewDelegate: NSObjectProtocol {
     func titleScrollView(scrollView: TitleScrollView, selectedButtonIndex: Int)
 }
 
 private class TitleScrollView: UIScrollView {
-
+    /// 属性
     weak var titleDelegate: TitleScrollViewDelegate?
     var currentIndex: Int = 0
     var visibleItemList: [String]? {
     
         didSet{
-            
             guard let items = visibleItemList, items.count > 0 else {return}
+            self.setupVisibleItemList(with: items)
         }
-        
-        
     }
-    
+    /// init
     override init(frame: CGRect) {
         super.init(frame: frame)
         showsVerticalScrollIndicator = false
@@ -47,9 +102,9 @@ private class TitleScrollView: UIScrollView {
     
     
     /// 设置button
-    func setupVisibleItemLis(with items: [String]) {
+    func setupVisibleItemList(with items: [String]) {
         
-        let buttonLayout = ItemLayout(itemsCount: items.count, superView: self)
+        let buttonLayout = ItemLayout(itemsCount: items.count, superView: self )
         for (index, item) in items.enumerated() {
             UIButton().addAction(self){[weak self] in
                     guard let `self` = self else {return}
@@ -57,13 +112,15 @@ private class TitleScrollView: UIScrollView {
                     self.titleDelegate?.titleScrollView(scrollView: self,selectedButtonIndex: $0.tag)
                 }
                 .added(into: self)
-                .makeLayout(buttonLayout)
                 .then{
                     let btn = $0 as! UIButton
                     btn.setTitleColor(.black, for: .normal)
                     btn.setTitle(item, for: .normal)
                     btn.tag = index
+                    btn.backgroundColor = UIColor.randomColor
                 }
+                .makeLayout(buttonLayout)
+           
         }
     }
     

@@ -26,12 +26,28 @@ extension UIView {
     }
     
     @discardableResult
-    func then<T: UIView>(config: (T) -> Void) -> T {
-        config(T())
+    func then<T: UIView>(_ config: (T) -> Void) -> T {
+        config(self as! T)
         return self as! T
     }
     
-    
-    
+}
+
+
+// MARK: - 圆角
+extension UIView {
+
+    func drawRounded(byRoundingCorners: UIRectCorner, cornerRadii: CGFloat) {
+        
+        let maskPath = UIBezierPath(roundedRect: self.bounds,
+                                    byRoundingCorners: byRoundingCorners,
+                                    cornerRadii: CGSize(width: cornerRadii, height: cornerRadii))
+        let maskLayer =  CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+        
+        
+    }
 
 }

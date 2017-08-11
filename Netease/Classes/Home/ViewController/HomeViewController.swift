@@ -10,10 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var newsMenuView: NewsMenuView!
+    lazy var listTops: [String] = {
+        return ["头条", "独家", "NBA", "社会", "历史", "军事", "中国好表演", "要闻", "娱乐", "财经", "趣闻","头条", "独家", "NBA", "社会", "历史"]
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.yellow
-        // Do any additional setup after loading the view.
+        setupSubviews()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +26,19 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+extension HomeViewController {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+    func setupSubviews() {
+        newsMenuView = NewsMenuView()
+        newsMenuView.added(into: self.view).then{ [weak self] in
+            guard let `self` = self else {return}
+            let menu = $0 as! NewsMenuView
+            menu.visibleItemList = self.listTops
+        }
+            .makeLayout(NewsMenuViewLayout())
     }
-    */
 
 }

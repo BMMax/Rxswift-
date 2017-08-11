@@ -15,6 +15,7 @@ class AddView: UIButton {
         super.init(frame: frame)
         setImage(#imageLiteral(resourceName: "close_gray"), for: .normal)
         setImage(#imageLiteral(resourceName: "close_gray"), for: .highlighted)
+        setImage(#imageLiteral(resourceName: "close_gray"), for: .selected)
     }
     
     required init?(coder aDecoder: NSCoder) {
