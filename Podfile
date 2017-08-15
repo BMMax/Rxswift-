@@ -10,7 +10,7 @@ target 'Netease' do
     pod 'ObjectMapper', '~> 2.2'
     pod 'SwiftyJSON'
     pod 'SnapKit'
-
+    pod 'Reveal-SDK', '~> 4', :configurations => ['Debug']
 
 end
 

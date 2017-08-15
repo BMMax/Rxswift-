@@ -10,11 +10,9 @@ import UIKit
 
 extension UIButton {
 
-    typealias ActionClosure = ((UIButton)->())?
     fileprivate struct AssociatedKeys {
     
-        static var actionClosure: ActionClosure
-    
+        static var actionClosureKey = "actionClosureKey"
     }
     func addTarget(_ target: Any?, action: Selector) -> UIView {
         
@@ -22,25 +20,24 @@ extension UIButton {
         return self
     }
     
-    fileprivate var actionClosure: ActionClosure {
+    fileprivate var actionClosure: ((UIButton)->())? {
     
         get{
     
-            guard let closure = objc_getAssociatedObject(self, &AssociatedKeys.actionClosure) as? ActionClosure else {return nil}
+            guard let closure = objc_getAssociatedObject(self, &AssociatedKeys.actionClosureKey) as? (UIButton)->() else {return nil}
             return closure
         }
         
         set{
             
-            objc_setAssociatedObject(self, &AssociatedKeys.actionClosure, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            setAssociated(value: newValue, associatedKey: &AssociatedKeys.actionClosureKey, policy: .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     
-    func addAction(_ target: Any?, action: ActionClosure) -> UIView {
+     func addAction(_ target: Any?, action: @escaping (UIButton)->()) -> UIView {
         
         actionClosure = action
-        self.addTarget(target, action: #selector(targetAction(_:)), for: .touchUpInside)
-        return self
+        return addTarget(self, action: #selector(targetAction(_:)))
     }
     
     func targetAction(_ button: UIButton) {

@@ -38,6 +38,7 @@ struct ItemLayout: Layoutable {
         return { make in
         
             make.centerY.equalTo(self.superView)
+            make.top.bottom.equalTo(self.superView)
             
             if self.superView.subviews.count == 1 {
                 make.left.equalTo(self.superView.snp.left).offset(15)

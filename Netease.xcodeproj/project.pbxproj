@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21E73B90301EF9C51B4204FD /* Pods_Netease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AAC2A6E30139099CC829AA /* Pods_Netease.framework */; };
+		8123E6121F417AC400DD8FED /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8123E6111F417AC400DD8FED /* NSObject+Extension.swift */; };
 		8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8132212A1F384B8700C21486 /* MainTabBarViewController.swift */; };
 		8132212E1F384D1D00C21486 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8132212D1F384D1D00C21486 /* NavigationViewController.swift */; };
 		813221301F384D9E00C21486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8132212F1F384D9E00C21486 /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		08AAC2A6E30139099CC829AA /* Pods_Netease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2455CBC864EB9D36104D61 /* Pods-Netease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netease.release.xcconfig"; path = "Pods/Target Support Files/Pods-Netease/Pods-Netease.release.xcconfig"; sourceTree = "<group>"; };
+		8123E6111F417AC400DD8FED /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		8132212A1F384B8700C21486 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		8132212D1F384D1D00C21486 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8132212F1F384D9E00C21486 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarControllerCoordinator.swift; path = ../Main/MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
 		814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCoordinator.swift; path = ../Home/ViewController/HomeControllerCoordinator.swift; sourceTree = "<group>"; };
+		814D85B91F414EC9008BC273 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = Netease/RevealServer.framework; sourceTree = "<group>"; };
 		8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelEditBar.swift; sourceTree = "<group>"; };
 		8157C3F31F3D894400029EE0 /* UIResponder+Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Router.swift"; sourceTree = "<group>"; };
 		815F52E51F3C229800CE88C3 /* NewsMenuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMenuLayout.swift; sourceTree = "<group>"; };
@@ -96,9 +99,18 @@
 		2056E2A4C74569BB894DCD1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				814D85B91F414EC9008BC273 /* RevealServer.framework */,
 				08AAC2A6E30139099CC829AA /* Pods_Netease.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8123E6101F417A9200DD8FED /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8123E6111F417AC400DD8FED /* NSObject+Extension.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		8132212C1F384C1400C21486 /* Coordinators */ = {
@@ -403,6 +415,7 @@
 		818767481F3959EE0068AB1A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8123E6101F417A9200DD8FED /* Foundation */,
 				8157C3F21F3D88B500029EE0 /* UIResponder */,
 				818767491F3959EE0068AB1A /* UIKit */,
 			);
@@ -628,6 +641,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8123E6121F417AC400DD8FED /* NSObject+Extension.swift in Sources */,
 				8176A2371F3AF61E0020DF46 /* UILabel+Extension.swift in Sources */,
 				CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */,
 				8187673E1F3944AE0068AB1A /* MineControllerCoordinator.swift in Sources */,
@@ -780,8 +794,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E2VX2CKHBP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Netease",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Netease/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = binM.Netease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -794,8 +831,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E2VX2CKHBP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Netease",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Netease/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = binM.Netease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -31,13 +31,7 @@ class NewsMenuView: UIView {
     /// init 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        /// scrollView
-        titleScrollView = TitleScrollView()
-        titleScrollView.backgroundColor = UIColor.white
-        titleScrollView.added(into: self)
-                       .then{($0 as! TitleScrollView).titleDelegate = self}
-                       .makeLayout(TitleScrollViewLayout())
-        
+
         /// +
         addItemView = AddView()
         addItemView.addAction(self){ [weak self] btn in
@@ -45,17 +39,24 @@ class NewsMenuView: UIView {
                 if self.channelEditBar == nil {
                     self.channelEditBar = ChannelEditBar()
                     self.channelEditBar?.added(into: self).makeLayout(TitleScrollViewLayout())
+                    self.channelEditBar?.isHidden = true 
                 }
                 self.channelEditBar?.isHidden = !(self.channelEditBar?.isHidden ?? false)
-                UIView.animate(withDuration: kAnimationTime, animations: { 
-                    guard let rotation = self.addItemView.imageView?.transform else {return}
-                    self.addItemView.imageView?.transform = rotation.rotated(by: CGFloat(Double.pi))
-                    /// 叫号点击
+                self.addItemView.isSelected = !self.addItemView.isSelected
+                self.addItemView.addAnimation{
                     self.delegate?.didClickChannelEdit()
-                })
+                }
             }
             .added(into: self)
             .makeLayout(AddButtonLayout())
+        
+        
+        /// scrollView
+        titleScrollView = TitleScrollView()
+        titleScrollView.added(into: self)
+            .then{($0 as! TitleScrollView).titleDelegate = self}
+            .makeLayout(TitleScrollViewLayout())
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -106,7 +107,8 @@ private class TitleScrollView: UIScrollView {
         
         let buttonLayout = ItemLayout(itemsCount: items.count, superView: self )
         for (index, item) in items.enumerated() {
-            UIButton().addAction(self){[weak self] in
+            let btn = UIButton(type: .custom)
+            btn.addAction(self){[weak self] in
                     guard let `self` = self else {return}
                     self.selectButton(withFrom: self.currentIndex, to: $0.tag)
                     self.titleDelegate?.titleScrollView(scrollView: self,selectedButtonIndex: $0.tag)
@@ -117,7 +119,6 @@ private class TitleScrollView: UIScrollView {
                     btn.setTitleColor(.black, for: .normal)
                     btn.setTitle(item, for: .normal)
                     btn.tag = index
-                    btn.backgroundColor = UIColor.randomColor
                 }
                 .makeLayout(buttonLayout)
            
