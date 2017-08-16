@@ -42,6 +42,7 @@
 		CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */; };
 		CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */; };
 		CE38F49E1F43EF4300BCFE93 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38F49D1F43EF4200BCFE93 /* Observable+ObjectMapper.swift */; };
+		CE38F4A01F442E9F00BCFE93 /* NewsMenuView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38F49F1F442E9F00BCFE93 /* NewsMenuView+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		CE38F49D1F43EF4200BCFE93 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
+		CE38F49F1F442E9F00BCFE93 /* NewsMenuView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewsMenuView+Rx.swift"; sourceTree = "<group>"; };
 		F986DDC6E17F6319A485C73F /* Pods-Netease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netease.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Netease/Pods-Netease.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -392,6 +394,7 @@
 			children = (
 				815F52E51F3C229800CE88C3 /* NewsMenuLayout.swift */,
 				8176A2391F3AFF230020DF46 /* NewsMenuView.swift */,
+				CE38F49F1F442E9F00BCFE93 /* NewsMenuView+Rx.swift */,
 				8176A23B1F3B02E10020DF46 /* AddView.swift */,
 				8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */,
 			);
@@ -661,6 +664,7 @@
 				818767341F3944310068AB1A /* LiveViewController.swift in Sources */,
 				815F52E61F3C229800CE88C3 /* NewsMenuLayout.swift in Sources */,
 				813221301F384D9E00C21486 /* HomeViewController.swift in Sources */,
+				CE38F4A01F442E9F00BCFE93 /* NewsMenuView+Rx.swift in Sources */,
 				818767401F3944BB0068AB1A /* MineViewController.swift in Sources */,
 				818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */,
 				8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */,

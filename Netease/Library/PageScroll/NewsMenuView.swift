@@ -15,7 +15,7 @@ import RxSwift
 //=======================================================
 @objc protocol NewsMenuViewDelegate: class {
     @objc optional func newsMenuView(_ menuView: NewsMenuView, selectedIndex: Int)
-    @objc optional func didClickChannelEdit()
+    @objc optional func didClickChannelEdit(_ menuView: NewsMenuView)
 }
 class NewsMenuView: UIView {
     
@@ -47,7 +47,7 @@ class NewsMenuView: UIView {
                 self.addItemView.isSelected = !self.addItemView.isSelected
                 self.addItemView.addAnimation{
                     if let click = self.delegate?.didClickChannelEdit {
-                        click()
+                        click(self)
                     }
                 }
             }
@@ -168,93 +168,10 @@ private class TitleScrollView: UIScrollView {
     }
 }
 
-//=======================================================
-// MARK: 滚动条 Rx-> Delegate
-//=======================================================
-// workaround for Swift compiler bug, cheers compiler team :)
-func castOptionalOrFatalError<T>(value: AnyObject?) -> T? {
-    if value == nil {
-        return nil
-    }
-    let v: T = castOrFatalError(value: value)
-    return v
-}
-func castOrThrow<T>(resultType: T.Type, _ object: AnyObject) throws -> T {
-    guard let returnValue = object as? T else {
-        throw RxCocoaError.castingError(object: object, targetType: resultType)
-    }
-    
-    return returnValue
-}
-
-func castOptionalOrThrow<T>(resultType: T.Type, _ object: AnyObject) throws -> T? {
-    if NSNull().isEqual(object) {
-        return nil
-    }
-    
-    guard let returnValue = object as? T else {
-        throw RxCocoaError.castingError(object: object, targetType: resultType)
-    }
-    
-    return returnValue
-}
-
-func castOrFatalError<T>(value: AnyObject!, message: String) -> T {
-    let maybeResult: T? = value as? T
-    guard let result = maybeResult else {
-        rxFatalError(lastMessage: message)
-    }
-    
-    return result
-}
-
-func castOrFatalError<T>(value: Any!) -> T {
-    let maybeResult: T? = value as? T
-    guard let result = maybeResult else {
-        rxFatalError(lastMessage: "Failure converting from \(value) to \(T.self)")
-    }
-    
-    return result
-}
-
-func rxFatalError(lastMessage: String) -> Never  {
-    // The temptation to comment this line is great, but please don't, it's for your own good. The choice is yours.
-    fatalError(lastMessage)
-}
-
-extension Reactive where Base: NewsMenuView {
-
-     class RxNewsMenuViewDelegateProxy: DelegateProxy, DelegateProxyType, NewsMenuViewDelegate {
-     
-        //We need a way to read the current delegate
-        class func currentDelegateFor(_ object: AnyObject) -> AnyObject? {
-            let mapView: NewsMenuView = object as! NewsMenuView
-            return mapView.delegate
-        }
-        //We need a way to set the current delegate
-        class func setCurrentDelegate(_ delegate: AnyObject?, toObject object: AnyObject) {
-            let mapView: NewsMenuView = object as! NewsMenuView
-            mapView.delegate = delegate as? NewsMenuViewDelegate
-        }
-    
-        public override class func createProxyForObject(_ object: AnyObject) -> AnyObject {
-            let custom = (object as! NewsMenuView)
-            return castOrFatalError(value: custom.rx.creatDelegateProxy)
-        }
-    
-    }
-    
-}
 
 
 
-extension Reactive where Base: NewsMenuView {
 
-    func creatDelegateProxy() -> RxNewsMenuViewDelegateProxy {
-    
-        return RxNewsMenuViewDelegateProxy(parentObject: base)
-    }
-}
 
 
 
