@@ -22,8 +22,8 @@ class ChannelEditBar: UIView {
         backgroundColor = UIColor.white
         
         channelLabel = UILabel()
-        channelLabel.added(into: self).then{
-            let label = $0 as! UILabel
+        channelLabel.mb.added(into: self).then{
+            let label = $0
             label.text = "切换栏目"
             label.font = textFont
             label.textColor = UIColor.black
@@ -31,7 +31,7 @@ class ChannelEditBar: UIView {
         .makeLayout(ChannelEditLabelLayout())
         
         sortBtn = UIButton(type: .custom)
-        sortBtn.addAction(self) {[weak self] in
+        sortBtn.mb.addAction(self) {[weak self] in
             guard let `self` = self else {return}
             if $0.isSelected {
                 $0.setTitle("完成", for: .normal)
@@ -43,7 +43,7 @@ class ChannelEditBar: UIView {
             }
             .added(into: self)
             .then {
-                let btn = $0 as! UIButton
+                let btn = $0
                 btn.setTitleColor(kMainRedColor, for: .normal)
                 btn.setTitle("排序删除", for: .normal)
                 btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)

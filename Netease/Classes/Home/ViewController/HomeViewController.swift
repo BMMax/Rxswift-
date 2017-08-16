@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         setupSubviews()
+        
         
     }
 
@@ -33,9 +36,10 @@ extension HomeViewController {
 
     func setupSubviews() {
         newsMenuView = NewsMenuView()
-        newsMenuView.added(into: self.view).then{ [weak self] in
+        newsMenuView.mb.added(into: self.view)
+        newsMenuView.mb.added(into: self.view).then{ [weak self] in
             guard let `self` = self else {return}
-            let menu = $0 as! NewsMenuView
+            let menu = $0
             menu.visibleItemList = self.listTops
         }
             .makeLayout(NewsMenuViewLayout())

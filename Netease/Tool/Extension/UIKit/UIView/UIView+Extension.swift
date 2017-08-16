@@ -8,32 +8,44 @@
 
 import UIKit
 
-extension UIView {
+public struct UILayout<Base> {
     
-    @discardableResult
-    func makeLayout<T: UIView>(_ layout: Layoutable) -> T {
-        snp.makeConstraints(layout.layoutMaker())
-        return self as! T
-    }
-}
-extension UIView {
-    
-    @discardableResult
-    func added<T: UIView>(into superView: UIView) -> T {
+    public let base: Base
+    public init(_ base: Base) {
         
-        superView.addSubview(self)
-        return self as! T
+        self.base = base
+    }
+}
+
+public extension NSObjectProtocol {
+    
+    public var mb: UILayout<Self> {
+        
+        return UILayout(self)
+    }
+}
+
+extension UILayout where Base: UIView {
+
+    @discardableResult
+    func added(into superView: UIView) -> UILayout {
+        
+        superView.addSubview(base)
+        return self
     }
     
     @discardableResult
-    func then<T: UIView>(_ config: (T) -> Void) -> T {
-        config(self as! T)
-        return self as! T
+    func then(_ config: (Base) -> Void) -> UILayout {
+        config(base)
+        return self
     }
     
+    @discardableResult
+    func makeLayout(_ layout: Layoutable) -> UILayout {
+        base.snp.makeConstraints(layout.layoutMaker())
+        return self
+    }
 }
-
-
 // MARK: - 圆角
 extension UIView {
 

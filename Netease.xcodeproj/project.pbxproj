@@ -41,6 +41,7 @@
 		CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACBD1F333E6A00EA7BEF /* AppCoordinator.swift */; };
 		CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */; };
 		CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */; };
+		CE38F49E1F43EF4300BCFE93 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38F49D1F43EF4200BCFE93 /* Observable+ObjectMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		CE37ACBD1F333E6A00EA7BEF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		CE38F49D1F43EF4200BCFE93 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		F986DDC6E17F6319A485C73F /* Pods-Netease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netease.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Netease/Pods-Netease.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -512,6 +514,7 @@
 		CEDE05871F346F8C003DA741 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CE38F49D1F43EF4200BCFE93 /* Observable+ObjectMapper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE38F49E1F43EF4300BCFE93 /* Observable+ObjectMapper.swift in Sources */,
 				8123E6121F417AC400DD8FED /* NSObject+Extension.swift in Sources */,
 				8176A2371F3AF61E0020DF46 /* UILabel+Extension.swift in Sources */,
 				CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */,

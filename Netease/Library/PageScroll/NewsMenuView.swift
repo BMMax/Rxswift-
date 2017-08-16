@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 //=======================================================
 // MARK: 滚动条
 //=======================================================
-protocol NewsMenuViewDelegate: NSObjectProtocol {
-    func newsMenuView(_ menuView: NewsMenuView, selectedIndex: Int)
-    func didClickChannelEdit()
+@objc protocol NewsMenuViewDelegate: class {
+    @objc optional func newsMenuView(_ menuView: NewsMenuView, selectedIndex: Int)
+    @objc optional func didClickChannelEdit()
 }
 class NewsMenuView: UIView {
     
@@ -34,17 +36,19 @@ class NewsMenuView: UIView {
 
         /// +
         addItemView = AddView()
-        addItemView.addAction(self){ [weak self] btn in
+        addItemView.mb.addAction(self){ [weak self] btn in
                 guard let `self` = self else {return}
                 if self.channelEditBar == nil {
                     self.channelEditBar = ChannelEditBar()
-                    self.channelEditBar?.added(into: self).makeLayout(TitleScrollViewLayout())
+                    self.channelEditBar?.mb.added(into: self).makeLayout(TitleScrollViewLayout())
                     self.channelEditBar?.isHidden = true 
                 }
                 self.channelEditBar?.isHidden = !(self.channelEditBar?.isHidden ?? false)
                 self.addItemView.isSelected = !self.addItemView.isSelected
                 self.addItemView.addAnimation{
-                    self.delegate?.didClickChannelEdit()
+                    if let click = self.delegate?.didClickChannelEdit {
+                        click()
+                    }
                 }
             }
             .added(into: self)
@@ -53,8 +57,8 @@ class NewsMenuView: UIView {
         
         /// scrollView
         titleScrollView = TitleScrollView()
-        titleScrollView.added(into: self)
-            .then{($0 as! TitleScrollView).titleDelegate = self}
+        titleScrollView.mb.added(into: self)
+            .then{$0.titleDelegate = self}
             .makeLayout(TitleScrollViewLayout())
         
     }
@@ -67,7 +71,10 @@ extension NewsMenuView: TitleScrollViewDelegate {
 
     fileprivate func titleScrollView(scrollView: TitleScrollView, selectedButtonIndex: Int) {
     
-        delegate?.newsMenuView(self,selectedIndex: selectedButtonIndex)
+        if let selectBtn = delegate?.newsMenuView {
+        
+            selectBtn(self, selectedButtonIndex)
+        }
     }
 }
 
@@ -108,14 +115,14 @@ private class TitleScrollView: UIScrollView {
         let buttonLayout = ItemLayout(itemsCount: items.count, superView: self )
         for (index, item) in items.enumerated() {
             let btn = UIButton(type: .custom)
-            btn.addAction(self){[weak self] in
+            btn.mb.addAction(self){[weak self] in
                     guard let `self` = self else {return}
                     self.selectButton(withFrom: self.currentIndex, to: $0.tag)
                     self.titleDelegate?.titleScrollView(scrollView: self,selectedButtonIndex: $0.tag)
                 }
                 .added(into: self)
                 .then{
-                    let btn = $0 as! UIButton
+                    let btn = $0
                     btn.setTitleColor(.black, for: .normal)
                     btn.setTitle(item, for: .normal)
                     btn.tag = index
@@ -160,4 +167,95 @@ private class TitleScrollView: UIScrollView {
         self.currentIndex = toIndex
     }
 }
+
+//=======================================================
+// MARK: 滚动条 Rx-> Delegate
+//=======================================================
+// workaround for Swift compiler bug, cheers compiler team :)
+func castOptionalOrFatalError<T>(value: AnyObject?) -> T? {
+    if value == nil {
+        return nil
+    }
+    let v: T = castOrFatalError(value: value)
+    return v
+}
+func castOrThrow<T>(resultType: T.Type, _ object: AnyObject) throws -> T {
+    guard let returnValue = object as? T else {
+        throw RxCocoaError.castingError(object: object, targetType: resultType)
+    }
+    
+    return returnValue
+}
+
+func castOptionalOrThrow<T>(resultType: T.Type, _ object: AnyObject) throws -> T? {
+    if NSNull().isEqual(object) {
+        return nil
+    }
+    
+    guard let returnValue = object as? T else {
+        throw RxCocoaError.castingError(object: object, targetType: resultType)
+    }
+    
+    return returnValue
+}
+
+func castOrFatalError<T>(value: AnyObject!, message: String) -> T {
+    let maybeResult: T? = value as? T
+    guard let result = maybeResult else {
+        rxFatalError(lastMessage: message)
+    }
+    
+    return result
+}
+
+func castOrFatalError<T>(value: Any!) -> T {
+    let maybeResult: T? = value as? T
+    guard let result = maybeResult else {
+        rxFatalError(lastMessage: "Failure converting from \(value) to \(T.self)")
+    }
+    
+    return result
+}
+
+func rxFatalError(lastMessage: String) -> Never  {
+    // The temptation to comment this line is great, but please don't, it's for your own good. The choice is yours.
+    fatalError(lastMessage)
+}
+
+extension Reactive where Base: NewsMenuView {
+
+     class RxNewsMenuViewDelegateProxy: DelegateProxy, DelegateProxyType, NewsMenuViewDelegate {
+     
+        //We need a way to read the current delegate
+        class func currentDelegateFor(_ object: AnyObject) -> AnyObject? {
+            let mapView: NewsMenuView = object as! NewsMenuView
+            return mapView.delegate
+        }
+        //We need a way to set the current delegate
+        class func setCurrentDelegate(_ delegate: AnyObject?, toObject object: AnyObject) {
+            let mapView: NewsMenuView = object as! NewsMenuView
+            mapView.delegate = delegate as? NewsMenuViewDelegate
+        }
+    
+        public override class func createProxyForObject(_ object: AnyObject) -> AnyObject {
+            let custom = (object as! NewsMenuView)
+            return castOrFatalError(value: custom.rx.creatDelegateProxy)
+        }
+    
+    }
+    
+}
+
+
+
+extension Reactive where Base: NewsMenuView {
+
+    func creatDelegateProxy() -> RxNewsMenuViewDelegateProxy {
+    
+        return RxNewsMenuViewDelegateProxy(parentObject: base)
+    }
+}
+
+
+
 

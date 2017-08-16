@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
 class HomeViewModel {
     
-    
+    /// input
+    var arrowButtonDidTap = PublishSubject<Void>()
+    var titleButtonDidTap = PublishSubject<Void>()
+    var contentsDidScroll = PublishSubject<Void>()
+
+
 }
