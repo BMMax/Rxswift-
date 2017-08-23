@@ -12,16 +12,13 @@
 		8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8132212A1F384B8700C21486 /* MainTabBarViewController.swift */; };
 		8132212E1F384D1D00C21486 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8132212D1F384D1D00C21486 /* NavigationViewController.swift */; };
 		813221301F384D9E00C21486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8132212F1F384D9E00C21486 /* HomeViewController.swift */; };
-		813221321F38514500C21486 /* NewsControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813221311F38514500C21486 /* NewsControllerCoordinator.swift */; };
 		813221341F38518300C21486 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813221331F38518300C21486 /* NewsViewController.swift */; };
 		814B1BD21F383B7700E1CE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BD11F383B7700E1CE05 /* AppDelegate.swift */; };
 		814B1BDA1F383B8000E1CE05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B1BD41F383B8000E1CE05 /* Assets.xcassets */; };
 		814B1BDB1F383B8000E1CE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B1BD51F383B8000E1CE05 /* LaunchScreen.storyboard */; };
 		814B1BDC1F383B8000E1CE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B1BD71F383B8000E1CE05 /* Main.storyboard */; };
 		814B1BDD1F383B8000E1CE05 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 814B1BD91F383B8000E1CE05 /* Info.plist */; };
-		814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */; };
 		814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */; };
-		814B1BF81F3843E800E1CE05 /* HomeControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */; };
 		8157C3F11F3D803E00029EE0 /* ChannelEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */; };
 		8157C3F41F3D894400029EE0 /* UIResponder+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157C3F31F3D894400029EE0 /* UIResponder+Router.swift */; };
 		815F52E61F3C229800CE88C3 /* NewsMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F52E51F3C229800CE88C3 /* NewsMenuLayout.swift */; };
@@ -30,14 +27,17 @@
 		8176A23A1F3AFF230020DF46 /* NewsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A2391F3AFF230020DF46 /* NewsMenuView.swift */; };
 		8176A23C1F3B02E10020DF46 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176A23B1F3B02E10020DF46 /* AddView.swift */; };
 		818767341F3944310068AB1A /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767331F3944310068AB1A /* LiveViewController.swift */; };
-		818767361F3944450068AB1A /* LiveControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767351F3944450068AB1A /* LiveControllerCoordinator.swift */; };
-		818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767371F3944600068AB1A /* VideoControllerCoordinator.swift */; };
-		8187673E1F3944AE0068AB1A /* MineControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187673D1F3944AE0068AB1A /* MineControllerCoordinator.swift */; };
 		818767401F3944BB0068AB1A /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187673F1F3944BB0068AB1A /* MineViewController.swift */; };
 		818767421F3946420068AB1A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767411F3946420068AB1A /* VideoViewController.swift */; };
 		818767471F3957B10068AB1A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818767461F3957B10068AB1A /* Common.swift */; };
 		8187674C1F395A230068AB1A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187674B1F395A230068AB1A /* UIColor+Extension.swift */; };
 		81A7935C1F3C06DE00A27D50 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7935B1F3C06DE00A27D50 /* UIButtonExtension.swift */; };
+		81AE66861F4D66D500AA8831 /* HomeControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE66801F4D66D500AA8831 /* HomeControllerCoordinator.swift */; };
+		81AE66871F4D66D500AA8831 /* LiveControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE66811F4D66D500AA8831 /* LiveControllerCoordinator.swift */; };
+		81AE66881F4D66D500AA8831 /* MainTabbarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE66821F4D66D500AA8831 /* MainTabbarControllerCoordinator.swift */; };
+		81AE66891F4D66D500AA8831 /* MineControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE66831F4D66D500AA8831 /* MineControllerCoordinator.swift */; };
+		81AE668A1F4D66D500AA8831 /* NewsControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE66841F4D66D500AA8831 /* NewsControllerCoordinator.swift */; };
+		81AE668B1F4D66D500AA8831 /* VideoControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE66851F4D66D500AA8831 /* VideoControllerCoordinator.swift */; };
 		CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACBD1F333E6A00EA7BEF /* AppCoordinator.swift */; };
 		CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */; };
 		CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37ACC31F333E8000EA7BEF /* StoryboardInitializable.swift */; };
@@ -52,16 +52,13 @@
 		8132212A1F384B8700C21486 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		8132212D1F384D1D00C21486 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8132212F1F384D9E00C21486 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		813221311F38514500C21486 /* NewsControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsControllerCoordinator.swift; path = ../News/ViewController/NewsControllerCoordinator.swift; sourceTree = "<group>"; };
 		813221331F38518300C21486 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		814B1BD11F383B7700E1CE05 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		814B1BD41F383B8000E1CE05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		814B1BD61F383B8000E1CE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		814B1BD81F383B8000E1CE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814B1BD91F383B8000E1CE05 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarControllerCoordinator.swift; path = ../Main/MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
 		814B1BF51F3842F400E1CE05 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCoordinator.swift; path = ../Home/ViewController/HomeControllerCoordinator.swift; sourceTree = "<group>"; };
 		814D85B91F414EC9008BC273 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = Netease/RevealServer.framework; sourceTree = "<group>"; };
 		8157C3F01F3D803E00029EE0 /* ChannelEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelEditBar.swift; sourceTree = "<group>"; };
 		8157C3F31F3D894400029EE0 /* UIResponder+Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Router.swift"; sourceTree = "<group>"; };
@@ -71,14 +68,17 @@
 		8176A2391F3AFF230020DF46 /* NewsMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMenuView.swift; sourceTree = "<group>"; };
 		8176A23B1F3B02E10020DF46 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		818767331F3944310068AB1A /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
-		818767351F3944450068AB1A /* LiveControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveControllerCoordinator.swift; path = ../Live/ViewController/LiveControllerCoordinator.swift; sourceTree = "<group>"; };
-		818767371F3944600068AB1A /* VideoControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoControllerCoordinator.swift; path = ../Video/ViewController/VideoControllerCoordinator.swift; sourceTree = "<group>"; };
-		8187673D1F3944AE0068AB1A /* MineControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MineControllerCoordinator.swift; path = ../Mine/ViewController/MineControllerCoordinator.swift; sourceTree = "<group>"; };
 		8187673F1F3944BB0068AB1A /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		818767411F3946420068AB1A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		818767461F3957B10068AB1A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8187674B1F395A230068AB1A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		81A7935B1F3C06DE00A27D50 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		81AE66801F4D66D500AA8831 /* HomeControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerCoordinator.swift; sourceTree = "<group>"; };
+		81AE66811F4D66D500AA8831 /* LiveControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveControllerCoordinator.swift; sourceTree = "<group>"; };
+		81AE66821F4D66D500AA8831 /* MainTabbarControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarControllerCoordinator.swift; sourceTree = "<group>"; };
+		81AE66831F4D66D500AA8831 /* MineControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineControllerCoordinator.swift; sourceTree = "<group>"; };
+		81AE66841F4D66D500AA8831 /* NewsControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsControllerCoordinator.swift; sourceTree = "<group>"; };
+		81AE66851F4D66D500AA8831 /* VideoControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoControllerCoordinator.swift; sourceTree = "<group>"; };
 		CE37ACA71F333E4A00EA7BEF /* Netease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE37ACBD1F333E6A00EA7BEF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE37ACC21F333E8000EA7BEF /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -120,12 +120,12 @@
 		8132212C1F384C1400C21486 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				814B1BDE1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift */,
-				814B1BF71F3843E800E1CE05 /* HomeControllerCoordinator.swift */,
-				813221311F38514500C21486 /* NewsControllerCoordinator.swift */,
-				818767351F3944450068AB1A /* LiveControllerCoordinator.swift */,
-				818767371F3944600068AB1A /* VideoControllerCoordinator.swift */,
-				8187673D1F3944AE0068AB1A /* MineControllerCoordinator.swift */,
+				81AE66801F4D66D500AA8831 /* HomeControllerCoordinator.swift */,
+				81AE66811F4D66D500AA8831 /* LiveControllerCoordinator.swift */,
+				81AE66821F4D66D500AA8831 /* MainTabbarControllerCoordinator.swift */,
+				81AE66831F4D66D500AA8831 /* MineControllerCoordinator.swift */,
+				81AE66841F4D66D500AA8831 /* NewsControllerCoordinator.swift */,
+				81AE66851F4D66D500AA8831 /* VideoControllerCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -651,22 +651,21 @@
 				8123E6121F417AC400DD8FED /* NSObject+Extension.swift in Sources */,
 				8176A2371F3AF61E0020DF46 /* UILabel+Extension.swift in Sources */,
 				CE37ACBF1F333E6A00EA7BEF /* AppCoordinator.swift in Sources */,
-				8187673E1F3944AE0068AB1A /* MineControllerCoordinator.swift in Sources */,
+				81AE66891F4D66D500AA8831 /* MineControllerCoordinator.swift in Sources */,
 				818767421F3946420068AB1A /* VideoViewController.swift in Sources */,
+				81AE66881F4D66D500AA8831 /* MainTabbarControllerCoordinator.swift in Sources */,
+				81AE66861F4D66D500AA8831 /* HomeControllerCoordinator.swift in Sources */,
 				814B1BF61F3842F400E1CE05 /* HomeViewModel.swift in Sources */,
-				813221321F38514500C21486 /* NewsControllerCoordinator.swift in Sources */,
+				81AE668A1F4D66D500AA8831 /* NewsControllerCoordinator.swift in Sources */,
 				8157C3F11F3D803E00029EE0 /* ChannelEditBar.swift in Sources */,
+				81AE668B1F4D66D500AA8831 /* VideoControllerCoordinator.swift in Sources */,
 				813221341F38518300C21486 /* NewsViewController.swift in Sources */,
-				814B1BDF1F383BB900E1CE05 /* MainTabbarControllerCoordinator.swift in Sources */,
 				8132212E1F384D1D00C21486 /* NavigationViewController.swift in Sources */,
-				818767361F3944450068AB1A /* LiveControllerCoordinator.swift in Sources */,
-				814B1BF81F3843E800E1CE05 /* HomeControllerCoordinator.swift in Sources */,
 				818767341F3944310068AB1A /* LiveViewController.swift in Sources */,
 				815F52E61F3C229800CE88C3 /* NewsMenuLayout.swift in Sources */,
 				813221301F384D9E00C21486 /* HomeViewController.swift in Sources */,
 				CE38F4A01F442E9F00BCFE93 /* NewsMenuView+Rx.swift in Sources */,
 				818767401F3944BB0068AB1A /* MineViewController.swift in Sources */,
-				818767381F3944600068AB1A /* VideoControllerCoordinator.swift in Sources */,
 				8132212B1F384B8700C21486 /* MainTabBarViewController.swift in Sources */,
 				8176A2341F3AF3950020DF46 /* UIView+Extension.swift in Sources */,
 				8157C3F41F3D894400029EE0 /* UIResponder+Router.swift in Sources */,
@@ -674,6 +673,7 @@
 				CE37ACC51F333E8000EA7BEF /* StoryboardInitializable.swift in Sources */,
 				814B1BD21F383B7700E1CE05 /* AppDelegate.swift in Sources */,
 				81A7935C1F3C06DE00A27D50 /* UIButtonExtension.swift in Sources */,
+				81AE66871F4D66D500AA8831 /* LiveControllerCoordinator.swift in Sources */,
 				8176A23C1F3B02E10020DF46 /* AddView.swift in Sources */,
 				CE37ACC41F333E8000EA7BEF /* BaseCoordinator.swift in Sources */,
 				8176A23A1F3AFF230020DF46 /* NewsMenuView.swift in Sources */,
