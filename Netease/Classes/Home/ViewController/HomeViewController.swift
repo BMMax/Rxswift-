@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         setupSubviews()
-        
+        bindUI()
         
     }
 
@@ -28,9 +28,7 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
-
 extension HomeViewController {
 
 
@@ -45,6 +43,7 @@ extension HomeViewController {
             .makeLayout(NewsMenuViewLayout())
         
         
+        
         newsMenuView.rx.didClickChannelEdit.subscribe(onNext: {
         
             print($0)
@@ -57,4 +56,17 @@ extension HomeViewController {
         }).addDisposableTo(disposeBag)
     }
     
+    
+    func bindUI() {
+    
+        /// item click
+        newsMenuView.rx.didSelectItem
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else {return}
+
+        
+        }).addDisposableTo(disposeBag)
+    
+    }
 }
